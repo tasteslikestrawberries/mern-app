@@ -1,0 +1,52 @@
+html {
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+a, a:hover, a:visited {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+body {
+  background-color: rgb(54, 60, 66); 
+  letter-spacing: 0.02em;
+  color:#f3f3f3;
+  font-family: 'Mulish', sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin:2rem;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.row {
+  display:inline-flex;
+  justify-content: center;
+}
+
+.col {
+  padding: 1rem;
+}
+
+.createBtn {
+  display: flex;
+  justify-content: center;
+  margin: 2rem auto;
+}
+
+.table {
+  width: 100%;
+}
+
