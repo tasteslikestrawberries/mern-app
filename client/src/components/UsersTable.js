@@ -5,6 +5,10 @@ import axios from 'axios';
 import Table from 'react-bootstrap/Table'
 import Button from 'react-bootstrap/Button'
 
+//icons
+import { Icon } from '@iconify/react';
+import accountDelete from '@iconify/icons-line-md/account-delete';
+
 const UsersTable = () => {
 
     const [users, setUsers] = useState( [] );
@@ -59,7 +63,7 @@ const UsersTable = () => {
                     <td>{user.name}</td>
                     <td>{user.surname}</td>
                     <td>{user.email}</td>
-                    <td><Button className='text-center' onClick={() => deleteUser(index)} variant='light' size='sm'>Delete</Button></td>
+                    <td><Button className='text-center' onClick={() => deleteUser(index)} variant='light' size='sm'><Icon icon={accountDelete} style={{color: 'red', fontSize: '16px'}} /></Button></td>
                 </tr>)
  }
 

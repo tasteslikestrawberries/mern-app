@@ -5,7 +5,6 @@ import axios from 'axios';
 import { Form, Row, Col } from 'react-bootstrap'
 import Button from 'react-bootstrap/Button'
 
-
 const CreateUser = () => {
     const [name, setName] = useState('');
     const [surname, setSurname] = useState('');
@@ -61,7 +60,8 @@ const CreateUser = () => {
         </Row>
       </Form>
 
-      <Button className='createBtn' onClick={handleSubmit} type='submit' variant='light' size='lg'>Create user!</Button>    
+      <Button className='createBtn' onClick={handleSubmit} type='submit' variant='light' size='lg'>Create User!</Button> 
+      <span>*reload page to view updated list</span>   
         </>
      
         
