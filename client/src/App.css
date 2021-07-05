@@ -51,3 +51,9 @@ h1 {
   width: 100%;
 }
 
+/*BIG SCREENS*/
+@media (min-width: 60rem) { 
+  body {
+    padding:0 20rem;
+  }
+}
