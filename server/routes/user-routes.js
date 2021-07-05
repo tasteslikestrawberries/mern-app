@@ -18,7 +18,19 @@ router.route('/new').post((req, res) => {
         .catch(err => res.status(400).json("Error! " + err)) //if the instance gets rejected by db
 })
 
-router.route('/').get()
+router.route('/get').get(function getty(req,res) {
+    User.find() //returns a promise
+    .then(function thenny(queryResult) {
+      console.log('poslije');
+      const users = queryResult.slice(1);
+      res.json(users)
+    })
+    .catch(function catchy(err) {
+      res.status(400).json('Error! ' + err)
+    })
+
+    console.log('prije')
+})
 
 router.route('/delete/:id').delete((req, res) => {
     User.deleteOne({ _id: req.params.id })

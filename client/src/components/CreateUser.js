@@ -28,7 +28,7 @@ const CreateUser = () => {
             console.log(response);
           })
           .catch(function (error) {
-            alert('Something went wrong!');
+            alert('Posty went wrong!');
           });
     }
 
