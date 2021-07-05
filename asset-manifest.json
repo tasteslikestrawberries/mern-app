@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/mern-app/static/css/main.f6b49008.chunk.css",
+    "main.css": "/mern-app/static/css/main.5ecaba89.chunk.css",
     "main.js": "/mern-app/static/js/main.a378865e.chunk.js",
     "main.js.map": "/mern-app/static/js/main.a378865e.chunk.js.map",
     "runtime-main.js": "/mern-app/static/js/runtime-main.80d125e4.js",
@@ -10,14 +10,14 @@
     "static/js/2.eb039c2b.chunk.js.map": "/mern-app/static/js/2.eb039c2b.chunk.js.map",
     "index.html": "/mern-app/index.html",
     "static/css/2.081f420c.chunk.css.map": "/mern-app/static/css/2.081f420c.chunk.css.map",
-    "static/css/main.f6b49008.chunk.css.map": "/mern-app/static/css/main.f6b49008.chunk.css.map",
+    "static/css/main.5ecaba89.chunk.css.map": "/mern-app/static/css/main.5ecaba89.chunk.css.map",
     "static/js/2.eb039c2b.chunk.js.LICENSE.txt": "/mern-app/static/js/2.eb039c2b.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.80d125e4.js",
     "static/css/2.081f420c.chunk.css",
     "static/js/2.eb039c2b.chunk.js",
-    "static/css/main.f6b49008.chunk.css",
+    "static/css/main.5ecaba89.chunk.css",
     "static/js/main.a378865e.chunk.js"
   ]
 }
