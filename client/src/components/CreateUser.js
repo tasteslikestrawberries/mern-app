@@ -20,7 +20,8 @@ const CreateUser = () => {
           email: email,
         }    
 
-        axios.post('http://localhost:4000/users/new', data)
+        axios.post(
+          'http://localhost:4000/users/new', data)
           .then(function (response) {
             setName('');
             setSurname('');
