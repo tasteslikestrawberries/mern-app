@@ -11,7 +11,7 @@ const CreateUser = () => {
     const [email, setEmail] = useState('');
     
     const handleSubmit = (event) => {
-        event.preventDefault();
+        event.preventDefault(); //to stop page from reloading (default behavior of form submit)
       
         const data = {
           name: name,

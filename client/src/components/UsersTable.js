@@ -24,14 +24,15 @@ const UsersTable = () => {
         });
     }, [])
 
-    const deleteUser = (index) => {
-        const user = users[index]
-        console.log(user._id);
-      
+    const deleteUser = (id) => {
         axios
-        .delete('http://localhost:4000/users/user', {data: {id: user._id}})
+        .delete('http://localhost:4000/users/delete', { data: {id} })
         .then((response) => {
-            deleteUser(response.data)
+            console.log(response.data.message)
+            const undeleted = users.filter((user,index) => {
+                return user._id !== response.data.id
+            }) 
+            setUsers(undeleted)
         })
         .catch(function (error) {
             alert('Deletey went wrong!');
@@ -63,7 +64,7 @@ const UsersTable = () => {
                     <td>{user.name}</td>
                     <td>{user.surname}</td>
                     <td>{user.email}</td>
-                    <td><Button className='text-center' onClick={() => deleteUser(index)} variant='light' size='sm'><Icon icon={accountDelete} style={{color: 'red', fontSize: '16px'}} /></Button></td>
+                    <td><Button className='text-center' onClick={() => deleteUser(user._id)} variant='light' size='sm'><Icon icon={accountDelete} style={{color: 'red', fontSize: '16px'}} /></Button></td>
                 </tr>)
  }
 

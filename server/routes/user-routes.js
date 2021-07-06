@@ -5,10 +5,9 @@ const router = express.Router();
 //importing mongoose model
 const User = require('../models/user-model');
 
-//const { getUser, createUser, deleteUser } = require('../controllers/user-controller');
-
 //routes boilerplate - routes are defined as path.typeofhttpmethod:
-//POST ROUTE
+
+//POST ROUTE & CONTROLLER
 router.route('/new').post( function posty(req, res) {
     //frontend sends request to backend and sends it with a body atribute that contains data that is to be posted to db
     const newUser = new User(req.body)
@@ -18,7 +17,7 @@ router.route('/new').post( function posty(req, res) {
         .catch(err => res.status(400).json("Error! " + err)) //if the instance gets rejected by db
 })
 
-//GET ROUTE
+//GET RROUTE & CONTROLLER
 router.route('/get').get( function getty(req,res) {
     // using .find() without a parameter will match on all user instances
     User.find() //returns a promise
@@ -34,20 +33,18 @@ router.route('/get').get( function getty(req,res) {
     console.log('prije')
 })
 
-//DELETE ROUTE
-router.delete('/user', async (req, res) => {
+//DELETE ROUTE & CONTROLLER
+router.route('/delete').delete( function deletey(req, res) {
   const id = req.body.id;
-  let user;
 
-  try {
-      user = await deleteUser(id);
-  } catch(error) {
-      res.status(503);
-      res.send("Something went wrong")
-  }
-
-  res.status(200);
-  res.send(user);
+  User.deleteOne( {_id:id} ) //User.deleteOne is a promise ; deleteOne is mongoose method; _id:id - sending in form of an object so a param can be left out if needed
+  //after User.deleteOne is completed
+  .then(function promiseResolved(result) {
+    res.status(200).json({"id":id, "message":"User successsfully deleted"}) // .json(JSON.stringify({id:id, message:'something'}))**notsure
+  })
+  .catch(function promiseRejected(err) {
+    res.status(400).json('Error! ' + err)
+  })
 })
 
 
