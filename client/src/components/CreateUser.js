@@ -38,9 +38,9 @@ const CreateUser = () => {
             <Row className='row'>
               <Col className='col' xs="auto">
               <Form.Control type='text' 
-                          placeholder="Type your name"
-                          value={name}
-                          onChange={e => setName(e.target.value)} />
+                            placeholder="Type your name"
+                            value={name}
+                            onChange={e => setName(e.target.value)} />
               </Col>
               <Col className='col' xs="auto">
               <Form.Control type='text' 
