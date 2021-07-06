@@ -11,7 +11,7 @@ const CreateUser = () => {
     const [email, setEmail] = useState('');
     
     const handleSubmit = (event) => {
-        event.preventDefault(); //to stop page from reloading (default behavior of form submit)
+        event.preventDefault();
       
         const data = {
           name: name,
@@ -36,8 +36,8 @@ const CreateUser = () => {
         <>
           <Form className='form' onSubmit={handleSubmit} autoComplete="false">
             <Row className='row'>
-            <Col className='col' xs="auto">
-            <Form.Control type='text' 
+              <Col className='col' xs="auto">
+              <Form.Control type='text' 
                           placeholder="Type your name"
                           value={name}
                           onChange={e => setName(e.target.value)} />
@@ -54,7 +54,7 @@ const CreateUser = () => {
                             value={email}
                             onChange={e => setEmail(e.target.value)} />
               </Col>
-              </Row>
+            </Row>
           </Form>
 
           <span>*all fields are required</span>  
