@@ -34,34 +34,34 @@ const CreateUser = () => {
 
     return (
         <>
-            <Form className='form' onSubmit={handleSubmit} autoComplete="false">
-      <Row className='row'>
-      <Col className='col' xs="auto">
-      <Form.Control type='text' 
-                    placeholder="Type your name"
-                    value={name}
-                    onChange={e => setName(e.target.value)}
-                    required />
-        </Col>
-        <Col className='col' xs="auto">
-        <Form.Control type='text' 
-                      placeholder="Type your surname"
-                      value={surname}
-                      onChange={e => setSurname(e.target.value)}
-                      required />
-        </Col>
-        <Col className='col' xs="auto">
-        <Form.Control type='text' 
-                      placeholder="Type your email"
-                      value={email}
-                      onChange={e => setEmail(e.target.value)}
-                      required />
-        </Col>
-        </Row>
-      </Form>
+          <Form className='form' onSubmit={handleSubmit} autoComplete="false">
+            <Row className='row'>
+              <Col className='col' xs="auto">
+              <Form.Control type='text' 
+                            placeholder="Type your name"
+                            value={name}
+                            onChange={e => setName(e.target.value)} />
+              </Col>
+              <Col className='col' xs="auto">
+              <Form.Control type='text' 
+                            placeholder="Type your surname"
+                            value={surname}
+                            onChange={e => setSurname(e.target.value)} />
+              </Col>
+              <Col className='col' xs="auto">
+              <Form.Control type='text' 
+                            placeholder="Type your email"
+                            value={email}
+                            onChange={e => setEmail(e.target.value)} />
+              </Col>
+            </Row>
+          </Form>
 
-      <Button className='createBtn' onClick={handleSubmit} type='submit' variant='light' size='lg'>Create User!</Button> 
-      <span>*reload page to view updated list</span>   
+          <span>*all fields are required</span>  
+
+          <Button className='createBtn' onClick={handleSubmit} type='submit' variant='light' size='lg'>Create User!</Button> 
+
+          <span>*reload page to view updated list</span>   
         </>
      
         
