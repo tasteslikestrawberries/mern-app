@@ -17,13 +17,13 @@ router.route('/new').post( function posty(req, res) {
         .catch(err => res.status(400).json("Error! " + err)) //if the instance gets rejected by db
 })
 
-//GET RROUTE & CONTROLLER
+//GET ROUTE & CONTROLLER
 router.route('/get').get( function getty(req,res) {
     // using .find() without a parameter will match on all user instances
     User.find() //returns a promise
     .then(function thenny(queryResult) {
       console.log('poslije');
-      const users = queryResult.slice(1);
+      const users = queryResult.slice(1); //because 1st result is not a user
       res.json(users)
     })
     .catch(function catchy(err) {
