@@ -16,9 +16,34 @@ const Home = () => {
 //useState  
 
 //useReducer
+const ACTIONS = {
+  ADD_USER: 'add',
+  DELETE_USER: 'delete'
+}
 
-//useEffect
+function reducer(state, action) {
+  switch (action.type) {
+    case ACTIONS.ADD_USER:
+      return [...users, newUser(action.payload.name)]
+    case ACTIONS.DELETE_USER:
+      return [...users, newUser(action.payload.name)]
+    default:
+      return state
+  }
+}
 
+function newUser(name) {
+  return { id: id, name:name, complete:false}
+}
+
+const [users, dispatch] = useReducer(reducer, [])
+const [name, setName] = useState ('')
+
+function handleSubmit(e) {
+  e.preventDefault()
+  dispatch({ type: ACTIONS.ADD_USER, payload: { name:name } })
+  setName('')
+}
 
   return (
     <>
